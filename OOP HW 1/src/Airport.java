@@ -2,7 +2,12 @@ import java.util.Objects;
 
 public class Airport {
     private String name;
-    //Test
+
+    public Airport(String name) {
+        setName(name);
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -21,5 +26,13 @@ public class Airport {
         return "Airport{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

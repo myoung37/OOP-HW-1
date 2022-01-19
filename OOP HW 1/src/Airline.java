@@ -3,6 +3,10 @@ import java.util.Objects;
 public class Airline {
     private String name;
 
+    public Airline(String name) {
+        setName(name);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -21,5 +25,13 @@ public class Airline {
         return "Airline{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
