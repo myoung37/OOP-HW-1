@@ -12,10 +12,9 @@ public static void main(String[] args){
         System.out.println(flight);
     } catch (NullParameterException ex) {
         ex.printStackTrace();
-    } catch (BadParameterException ex){
+    } catch (BadParameterException ex) {
         ex.printStackTrace();
     }
-
 }
 
 }
