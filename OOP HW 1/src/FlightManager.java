@@ -1,12 +1,26 @@
 import java.util.List;
 
 public class FlightManager {
-List<Flight> flights = new List<Flight>() {
-};
+    List<Flight> flights = new List<Flight>();
 
-private void createFlight(){
+    static private FlightManager instance;
+    private FlightManager(){
 
+    }
+public static FlightManager getInstance(){
+        if instance==null{
+            instance=new FlightManager();
+    }
+        return instance;
 }
+    private void createFlight(){
+
+    }
+
+
+
+
+
 
 private Flight getFlightByNumber(flightNumber){
 
