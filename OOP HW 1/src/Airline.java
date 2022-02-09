@@ -1,9 +1,11 @@
 import java.util.Objects;
+import Exception.BadParameterException;
+import Exception.NullParameterException;
 
 public class Airline {
     private String name;
 
-    public Airline(String name) {
+    public Airline(String name) throws NullParameterException, BadParameterException {
         setName(name);
     }
 
@@ -31,7 +33,14 @@ public class Airline {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) throws BadParameterException, NullParameterException {
+       if(name == null){
+           throw new NullParameterException("Airline name cannot be null");
+       }
+       if (name.length() > 8){
+           throw new BadParameterException("Invalid Name");
+       }
         this.name = name;
     }
+
 }

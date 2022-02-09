@@ -1,9 +1,11 @@
 import java.util.Objects;
+import Exception.BadParameterException;
+import Exception.NullParameterException;
 
 public class Airport {
     private String name;
 
-    public Airport(String name) {
+    public Airport(String name) throws NullParameterException, BadParameterException {
         setName(name);
     }
 

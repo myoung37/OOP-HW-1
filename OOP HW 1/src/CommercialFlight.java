@@ -1,20 +1,20 @@
-import java.security.PrivateKey;
 import java.util.Date;
 import java.util.Objects;
+import java.util.UUID;
 
-public class Flight {
+public class CommercialFlight {
     private Airline airline;
     private Airport origine;
     private Airport destination;
-    private String flightNumber;
+    private UUID flightNumber;
     private Date departureTime;
 
-    public Flight(Airline airline, Airport origin, Airport destination, String flightNum, Date departureTime) {
+    public CommercialFlight(Airline airline, Airport origin, Airport destination, String flightNum, Date departureTime) {
     setAirline(airline);
-    setOrigine(origin);
+    setOrigine(origine);
     setDestination(destination);
-    setFlightNumber(flightNum);
-    setDepartureTime(departureTime);
+    setFlightNumber();
+    setDepartureTime();
     }
 
 
@@ -22,7 +22,7 @@ public class Flight {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Flight flight = (Flight) o;
+        CommercialFlight flight = (CommercialFlight) o;
         return airline.equals(flight.airline) && origine.equals(flight.origine) && destination.equals(flight.destination) && Objects.equals(flightNumber, flight.flightNumber) && Objects.equals(departureTime, flight.departureTime);
     }
 
@@ -59,19 +59,19 @@ public class Flight {
     }
 
     public String getFlightNumber() {
-        return flightNumber;
+        return flightNumber.toString();
     }
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
+    private void setFlightNumber() {
+        this.flightNumber = UUID.randomUUID();
     }
 
     public Date getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
-        this.departureTime = departureTime;
+    private void setDepartureTime() {
+        this.departureTime = new Date(2022, 04, 22, 22, 30);
     }
 
     public Airport getOrigine() {
