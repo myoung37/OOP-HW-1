@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Flight {
-
     public class Flight {
         private Airline airline;
         private Airport origin;
@@ -88,4 +86,4 @@ public class Flight {
         }
     }
 
-}
+

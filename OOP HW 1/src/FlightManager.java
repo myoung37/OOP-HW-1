@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.UUID;
 
 public class FlightManager {
     List<Flight> flights = new List<Flight>();
@@ -8,7 +9,7 @@ public class FlightManager {
 
     }
 public static FlightManager getInstance(){
-        if instance==null{
+        if (instance==null){
             instance=new FlightManager();
     }
         return instance;
@@ -22,7 +23,8 @@ public static FlightManager getInstance(){
 
 
 
-private Flight getFlightByNumber(flightNumber){
+private Flight getFlightByNumber(String flightNumber){
 
+    return flightNumber.toString();
 }
 }
