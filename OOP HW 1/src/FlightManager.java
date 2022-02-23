@@ -1,30 +1,27 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class FlightManager {
-    List<Flight> flights = new List<Flight>();
+public final class FlightManager {
+    private static List<Flight> flights;
 
-    static private FlightManager instance;
-    private FlightManager(){
+    private static FlightManager ourInstance;
 
+public static FlightManager getInstance() throws Exception{
+        if (ourInstance==null){
+            ourInstance=new FlightManager();
     }
-public static FlightManager getInstance(){
-        if (instance==null){
-            instance=new FlightManager();
-    }
-        return instance;
+        return ourInstance;
 }
-    private void createFlight(){
-
+    private FlightManager(){
+    flights =  new ArrayList();
     }
 
+    public UUID createFlight(String type, Airline airline, Airport origin, Airport destination){
+    return null;
+    }
 
-
-
-
-
-private Flight getFlightByNumber(String flightNumber){
-
-    return flightNumber.toString();
+    public Flight getFlightByNumber(UUID flightNumber){
+    return null;
 }
 }
