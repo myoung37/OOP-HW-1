@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+import java.util.Optional;
 
 public final class FlightManager {
     private static List<Flight> flights;
@@ -14,14 +14,18 @@ public static FlightManager getInstance() throws Exception{
         return ourInstance;
 }
     private FlightManager(){
-    flights =  new ArrayList();
+    flights =  new ArrayList<Flight>();
     }
 
-    public UUID createFlight(String type, Airline airline, Airport origin, Airport destination){
-    return null;
+    public String createFlight(String type, Airline airline, Airport origin, Airport destination){
+    Flight flight = FlightFactory.createFlight(type,airline,origin,destination);
+    flights.add(flight);
+    return flight.getFlightNumber();
     }
 
-    public Flight getFlightByNumber(UUID flightNumber){
-    return null;
-}
+    public Optional<Flight> getFlightByFlightNumber(String flightNumber) {
+        return flights.stream()
+                .filter(flt -> flt.getFlightNumber().equals(flightNumber))
+                .findFirst();
+    }
 }

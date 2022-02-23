@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import Exception.NullParameterException;
 
-public class CommercialFlight extends Flight{
+public class CommercialFlight implements Flight{
     private Airline airline;
     private Airport origin;
     private Airport destination;
